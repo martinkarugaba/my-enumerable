@@ -5,9 +5,9 @@ class MyList
     @list = list
   end
 
-  def each
+  def each(&block)
     return enum_for(:each) unless block_given?
 
-    @list.each { |item| yield item }
+    @list.each(&block)
   end
 end
